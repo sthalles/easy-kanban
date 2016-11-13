@@ -5,22 +5,15 @@
   flex-direction: row;
   flex-wrap: nowrap;
   height: 100%;
-}
-
-.todo {
-  background-color: yellow;
-}
-
-.doing {
-  background-color: green;
-}
-
-.done {
-  background-color: red;
+  justify-content: space-around;
 }
 
 .selected-panel {
-  flex-grow: 1 !important;
+  flex: 1 !important;
+}
+
+.board-panels {
+  flex: 1;
 }
 
 
@@ -29,12 +22,9 @@
 @media (min-width: 768px) {
   .board-panels {
     min-width: 300px;
-    /*    flex-grow: 1;*/
-    max-width: 590px !important;
   }
   .selected-panel {
-    /*    flex-grow: 2 !important;*/
-    width: 590px !important;
+    flex-grow: 2 !important;
   }
 }
 
@@ -43,7 +33,7 @@
 
 @media (min-width: 1200px) {
   .selected-panel {
-    flex-grow: 1 !important;
+    /*    flex-grow: 1 !important;*/
   }
 }
 

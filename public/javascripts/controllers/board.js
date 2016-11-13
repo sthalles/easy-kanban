@@ -3,17 +3,20 @@ angular.module('easyKanbanApp').controller('BoardController', ['$scope', 'BoardS
     {
       id: 1,
       title: 'To do',
-      isSelected: true
+      isSelected: true,
+      color: 'red'
     },
     {
       id: 2,
       title: 'Doing',
-      isSelected: false
+      isSelected: false,
+      color: 'blue'
     },
     {
       id: 3,
       title: 'Done',
-      isSelected: false
+      isSelected: false,
+      color: 'yellow'
     }
   ];
 
@@ -29,40 +32,63 @@ angular.module('easyKanbanApp').controller('BoardController', ['$scope', 'BoardS
     column.isSelected = true;
   };
 
-  $scope.tasks = [{
-    name: 'Tasks 1',
-    description: 'Mockup tasks 1',
-    tag: 'bug',
-    column: 2
-  },
-  {
-    name: 'Tasks 4',
-    description: 'Mockup tasks 4',
-    tag: 'bug',
-    column: 2
-  }, {
-    name: 'Tasks 5',
-    description: 'Mockup tasks 5',
-    tag: 'bug',
-    column: 2
-  },
-  {
-    name: 'Tasks 2',
-    description: 'Mockup tasks 2',
-    tag: 'feature',
-    column: 1
-  },
-  {
-    name: 'Tasks 3',
-    description: 'Mockup tasks 3',
-    tag: 'improvement',
-    column: 3
-  },
-  {
-    name: 'Tasks 6',
-    description: 'Mockup tasks 6',
-    tag: 'improvement',
-    column: 3
-  }];
+  $scope.tasks = [
+        {
+       name: 'Tasks 1',
+       description: 'Mockup tasks 1',
+       tag: 'bug',
+       column: 2
+     }, {
+       name: 'Tasks 4',
+       description: 'Mockup tasks 4',
+       tag: 'bug',
+       column: 2
+     }, {
+       name: 'Tasks 5',
+       description: 'Mockup tasks 5',
+       tag: 'bug',
+       column: 2
+     }, {
+       name: 'Tasks 2',
+       description: 'Mockup tasks 2',
+       tag: 'feature',
+       column: 1
+     }, {
+       name: 'Tasks 3',
+       description: 'Mockup tasks 3',
+       tag: 'improvement',
+       column: 3
+     }, {
+       name: 'Tasks 6',
+       description: 'Mockup tasks 6',
+       tag: 'improvement',
+       column: 3
+     }, {
+       name: 'Tasks 6',
+       description: 'Mockup tasks 6',
+       tag: 'improvement',
+       column: 3
+     }, {
+       name: 'Tasks 6',
+       description: 'Mockup tasks 6',
+       tag: 'improvement',
+       column: 3
+     }, {
+       name: 'Tasks 6',
+       description: 'Mockup tasks 6',
+       tag: 'improvement',
+       column: 3
+     }, {
+       name: 'Tasks 6',
+       description: 'Mockup tasks 6',
+       tag: 'improvement',
+       column: 3
+     }, {
+       name: 'Tasks 6',
+       description: 'Mockup tasks 6',
+       tag: 'improvement',
+       column: 3
+     }
+  ];
 
 }]);
