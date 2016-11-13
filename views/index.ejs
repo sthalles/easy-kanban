@@ -15,7 +15,7 @@
 
   <div class="board-container" ng-controller="BoardController">
     <div id="kanban-board">
-      <div ng-repeat="col in boardColumns" class="board-panels" ng-class="{'selected-panel': col.isSelected}" ng-style="{'background-color': col.color}">
+      <div ng-repeat="col in boardColumns" class="board-columns" ng-class="{'selected-column': col.isSelected}" ng-style="{'background-color': col.color}">
         <div class="btn board-header" ng-click="$parent.selectColumn(col, $event)">{{col.title}}</div>
 
         <!-- TODO: instead of getting all tasks for each column, get only the tasks for that column-->
@@ -38,6 +38,12 @@
         </div>
       </div>
     </div>
+
+    <!-- Add new task btn-->
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+    </div>
+
   </div>
 
 
