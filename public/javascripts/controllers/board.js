@@ -33,7 +33,7 @@ angular.module('easyKanbanApp').controller('BoardController', ['$scope', 'BoardS
   };
 
   $scope.addNewTask = function () {
-    $('#modal1').modal('open');
+    debugger;
   };
 
   $scope.tasks = [
