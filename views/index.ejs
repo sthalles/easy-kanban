@@ -6,7 +6,6 @@
 </head>
 
 <body>
-
   <nav>
     <div class="nav-wrapper">
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -37,39 +36,46 @@
 
         </div>
       </div>
+
+      <!-- Add new task btn-->
+      <div class="fixed-action-btn">
+        <a href="#add-new-task-modal" class="modal-trigger btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+      </div>
     </div>
 
-    <!-- Add new task btn-->
-    <div class="fixed-action-btn">
-      <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-    </div>
+    <footer>
+      <% include ../partials/add-new-task-modal %>
+    </footer>
 
-  </div>
+    <footer>
+      <% include ../partials/footer %>
+    </footer>
 
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 
-  <footer>
-    <% include ../partials/footer %>
-  </footer>
+    <script src="javascripts/Board.js"></script>
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="javascripts/kanban-board.js"></script>
 
-  <script src="javascripts/Board.js"></script>
+    <script src="javascripts/services/board.js"></script>
 
-  <script src="javascripts/kanban-board.js"></script>
+    <script src="javascripts/controllers/board.js"></script>
 
-  <script src="javascripts/services/board.js"></script>
+    <script>
+      $(document).ready(function () {
 
-  <script src="javascripts/controllers/board.js"></script>
+        // Initialize collapse button
+        $(".button-collapse").sideNav();
+        // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+        //$('.collapsible').collapsible();
 
-  <script>
-    // Initialize collapse button
-    $(".button-collapse").sideNav();
-    // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-    //$('.collapsible').collapsible();
-  </script>
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+      });
+    </script>
 
 </body>
 
