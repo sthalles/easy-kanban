@@ -14,7 +14,6 @@
 
 .board-columns {
   flex: 1;
-  overflow-y: auto;
 }
 
 
@@ -22,7 +21,7 @@
 
 @media (min-width: 768px) {
   .board-columns {
-    min-width: 300px;
+    min-width: 290px;
   }
   .selected-column {
     flex-grow: 2 !important;
@@ -52,7 +51,9 @@
   display: flex;
   flex-flow: row wrap;
   align-content: flex-start;
-  height: 100%;
+  overflow-y: auto;
+  /*  TODO: add webkit for older browser supporting*/
+  height: calc(100% - 36px);
 }
 
 .board-container {
