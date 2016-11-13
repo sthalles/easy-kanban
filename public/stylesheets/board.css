@@ -1,0 +1,69 @@
+/* Extra small devices (phones, less than 768px) */
+
+#kanban-board {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100%;
+}
+
+.todo {
+  background-color: yellow;
+}
+
+.doing {
+  background-color: green;
+}
+
+.done {
+  background-color: red;
+}
+
+.selected-panel {
+  flex-grow: 1 !important;
+}
+
+
+/* Small devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+  .board-panels {
+    min-width: 300px;
+    /*    flex-grow: 1;*/
+    max-width: 590px !important;
+  }
+  .selected-panel {
+    /*    flex-grow: 2 !important;*/
+    width: 590px !important;
+  }
+}
+
+
+/* Large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+  .selected-panel {
+    flex-grow: 1 !important;
+  }
+}
+
+.board-header {
+  width: 100%;
+  box-shadow: none;
+}
+
+.task-item {
+  max-height: 170px !important;
+  margin: 3px !important;
+}
+
+.column-content {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  height: 100%;
+}
+
+.board-container {
+  height: 100%;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="easyKanbanApp">
+
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div class="board-container" ng-controller="BoardController">
+    <div id="kanban-board">
+      <div ng-repeat="col in boardColumns" class="board-panels" ng-class="{'selected-panel': col.isSelected}">
+        <div class="btn board-header" ng-click="$parent.selectColumn(col, $event)">{{col.title}}</div>
+
+        <!-- TODO: instead of getting all tasks for each column, get only the tasks for that column-->
+        <div class="column-content">
+
+          <!-- TODO: transform this card div in an angular directive-->
+          <div ng-repeat="task in tasks" ng-if="task.column == col.id">
+            <div class="card task-item blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title">{{task.name}}</span>
+                <p>{{task.description}}</p>
+              </div>
+              <div class="card-action">
+                <a href="#">This is a link</a>
+                <a href="#">This is a link</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+  <script src="javascripts/Board.js"></script>
+
+  <script src="javascripts/kanban-board.js"></script>
+
+  <script src="javascripts/services/board.js"></script>
+
+  <script src="javascripts/controllers/board.js"></script>
+
+  <script>
+    // Initialize collapse button
+    $(".button-collapse").sideNav();
+    // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+    //$('.collapsible').collapsible();
+  </script>
+
+</body>
+
+</html>
