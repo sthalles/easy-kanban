@@ -5,12 +5,14 @@
   <% include ../partials/head %>
 </head>
 
+
 <body ng-app="easyKanbanApp">
   <nav>
     <div class="nav-wrapper">
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
+
 
   <div class="board-container" ng-controller="BoardController">
     <div id="kanban-board">
@@ -39,13 +41,18 @@
 
       <!-- Add new task btn-->
       <div class="fixed-action-btn">
-        <a href="#add-new-task-modal" class="modal-trigger btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+        <a href="#modal1" class="modal-trigger btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
       </div>
     </div>
+
     <div>
       <% include ../partials/add-new-task-modal %>
     </div>
+
   </div>
+
+
+
 
   <footer>
     <% include ../partials/footer %>
