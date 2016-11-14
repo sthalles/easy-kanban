@@ -19,6 +19,9 @@
   -webkit-box-flex: 1 !important;
   -ms-flex: 1 !important;
   flex: 1 !important;
+  -webkit-transition: all 1s;
+  /* For Safari 3.1 to 6.0 */
+  transition: all 1s;
 }
 
 .board-columns {
@@ -37,6 +40,9 @@
   .selected-column {
     -webkit-box-flex: 2 !important;
     -ms-flex-positive: 2 !important;
+    -webkit-transition: all 1s;
+    /* For Safari 3.1 to 6.0 */
+    transition: all 1s;
     flex-grow: 2 !important;
   }
 }
@@ -52,7 +58,8 @@
 
 .board-header {
   width: 100%;
-  box-shadow: none;
+  box-shadow: none !important;
+  border-radius: 0 !important;
 }
 
 .task-item {
