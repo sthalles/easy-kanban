@@ -1,18 +1,29 @@
 /* Extra small devices (phones, less than 768px) */
 
 #kanban-board {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
 }
 
 .selected-column {
+  -webkit-box-flex: 1 !important;
+  -ms-flex: 1 !important;
   flex: 1 !important;
 }
 
 .board-columns {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
 }
 
@@ -24,6 +35,8 @@
     min-width: 290px;
   }
   .selected-column {
+    -webkit-box-flex: 2 !important;
+    -ms-flex-positive: 2 !important;
     flex-grow: 2 !important;
   }
 }
@@ -48,8 +61,12 @@
 }
 
 .column-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
+  -ms-flex-line-pack: start;
   align-content: flex-start;
   overflow-y: auto;
   /*  TODO: add webkit for older browser supporting*/

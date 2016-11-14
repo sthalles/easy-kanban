@@ -36,6 +36,36 @@ angular.module('easyKanbanApp').controller('BoardController', ['$scope', 'BoardS
     debugger;
   };
 
+  $scope.handleDragStart = function (ev) {
+    //debugger;
+    this.style.opacity = '0.4';
+    ev.dataTransfer.setData('text/plain', ev.target.id);
+    // Set the drag effect to move
+    ev.dataTransfer.dropEffect = "move";
+  };
+
+  $scope.handleDragEnd = function (ev) {
+    this.style.opacity = '1.0';
+  };
+
+  $scope.handleDrop = function (ev) {
+    ev.preventDefault();
+    ev.stopPropagation();
+
+    // Get the id of the target and add the moved element to the target's DOM
+    var data = ev.dataTransfer.getData("text");
+
+    if (ev.target.hasAttribute("droppable")) {
+      ev.target.appendChild(document.getElementById(data));
+    }
+  };
+
+  $scope.handleDragOver = function (ev) {
+    ev.preventDefault(); // Necessary. Allows us to drop.
+    ev.dataTransfer.dropEffect = 'move'; // See the section on the DataTransfer object.
+    return false;
+  };
+
   $scope.tasks = [
     {
       name: 'Tasks 1',

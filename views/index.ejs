@@ -18,19 +18,19 @@
         <div class="btn board-header" ng-click="$parent.selectColumn(col, $event)">{{col.title}}</div>
 
         <!-- TODO: instead of getting all tasks for each column, get only the tasks for that column-->
-        <div class="column-content">
+        <div id="col{{$index}}" class="column-content" droppable="true">
 
           <!-- TODO: transform this card div in an angular directive-->
-          <div ng-repeat="task in tasks" ng-if="task.column == col.id">
-            <div class="card task-item blue-grey darken-1">
-              <div class="card-content white-text">
-                <span class="card-title">{{task.name}}</span>
-                <p>{{task.description}}</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-              </div>
+          <div ng-repeat="task in tasks" ng-if="task.column == col.id" class="card task-item blue-grey darken-1" id="{{$index}}" draggable="true">
+
+            <div class="card-content white-text">
+              <span class="card-title">{{task.name}}</span>
+              <p>{{task.description}}</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+
             </div>
           </div>
 
@@ -60,9 +60,13 @@
 
   <script src="javascripts/kanban-board.js"></script>
 
+  <script src="javascripts/directivies/dragdrop.js"></script>
+
   <script src="javascripts/services/board.js"></script>
 
   <script src="javascripts/controllers/board.js"></script>
+
+  <script src="javascripts/dragdrop/drag-and-drop.js"></script>
 
   <script>
     $(document).ready(function () {
