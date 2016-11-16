@@ -8,7 +8,7 @@
 
 <body ng-app="easyKanbanApp">
   <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper teal lighten-2">
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
@@ -25,13 +25,25 @@
           <!-- TODO: transform this card div in an angular directive-->
           <div ng-repeat="task in tasks" ng-if="task.column == col.id" class="card task-item blue-grey darken-1" id="{{$index}}" draggable="true">
 
-            <div class="card-content white-text">
-              <span class="card-title">{{task.name}}</span>
-              <p>{{task.description}}</p>
+            <div class="card-content task-content white-text">
+              <div class="row task-header">
+                <div class="col s8" style="padding: 0px">
+                  <h5 class="card-title" style="margin: 0px !important;">Task ID #{{task.id}}</h5>
+                </div>
+                <div class="col s4" style="padding: 0px">
+                  <h5 class="right-align">{{task.points}}</h5>
+                </div>
+              </div>
+              <div class="row task-header">
+                <p>{{task.description}}</p>
+              </div>
             </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-              <a href="#">This is a link</a>
+            <div class="card-action task-action">
+              <div class="col s6 chip task-chip">
+                <img src="http://materializecss.com/images/yuna.jpg" alt="Contact Person"> Jane Doe
+
+              </div>
+              <i class="material-icons right">more_vert</i>
 
             </div>
           </div>

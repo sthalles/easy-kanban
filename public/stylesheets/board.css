@@ -40,10 +40,10 @@
   .selected-column {
     -webkit-box-flex: 2 !important;
     -ms-flex-positive: 2 !important;
+    flex-grow: 2 !important;
     -webkit-transition: all 1s;
     /* For Safari 3.1 to 6.0 */
     transition: all 1s;
-    flex-grow: 2 !important;
   }
 }
 
@@ -63,7 +63,8 @@
 }
 
 .task-item {
-  max-height: 170px !important;
+  height: 140px !important;
+  width: 240px;
   margin: 3px !important;
 }
 
@@ -82,4 +83,21 @@
 
 .board-container {
   height: 100%;
+}
+.task-content {
+  height: 70%;
+  padding: 5px 8px 5px 8px !important;
+}
+
+.task-action {
+  height: 30%;
+  padding: 5px 8px 5px 8px !important;
+}
+
+.task-chip {
+  margin-right: 0px !important;
+}
+
+.task-header {
+  margin: 0px !important;
 }
