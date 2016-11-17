@@ -30,15 +30,18 @@
       column.isSelected = true;
     };
 
-    $scope.addNewTask = function () {
+    $scope.createNewTask = function (newTask) {
       $scope.tasks.push({
-        name: 'Tasks 1',
-        description: 'Mockup tasks 1',
+        name: newTask.name,
+        description: newTask.description,
         tag: 'bug',
         creator: 'Thalles',
         assignedTo: 'Thalles',
         column: 1
       });
+
+      // clear out the review so the product will be reset
+      this.task = {}
     };
 
     $scope.handleDragStart = function (ev) {
